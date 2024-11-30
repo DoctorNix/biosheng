@@ -5,17 +5,32 @@ interface ContactProps {
     isLargeFont: boolean;
 }
 
+// 这边是公司信息部分，修改信息在这里修，添加格式为：
+// {
+//     name: isChinese ? '公司名' : 'Company Name',
+//         address: isChinese ? '地址: xx' : 'Address: xx',
+//     email: 'xxx@company.com',
+//     phone: isChinese ? '电话: +86 123 456 789' : 'Phone: +86 123 456 789',
+//     logo: 'https://via.placeholder.com/80', // Placeholder logo
+// },
 const Contact: React.FC<ContactProps> = ({ isChinese, isLargeFont }) => {
     const companies = [
         {
-            name: isChinese ? '公司 1' : 'Company 1',
+            name: isChinese ? '总公司' : 'Company',
             address: isChinese ? '地址: xx' : 'Address: xx',
             email: 'xxx@company.com',
             phone: isChinese ? '电话: +86 123 456 789' : 'Phone: +86 123 456 789',
             logo: 'https://via.placeholder.com/80', // Placeholder logo
         },
         {
-            name: isChinese ? '公司 2' : 'Company 2',
+            name: isChinese ? '公司 1' : 'Live Mo',
+            address: isChinese ? '地址: xx' : 'Address: xx',
+            email: 'xxx@company.com',
+            phone: isChinese ? '电话: +86 123 456 789' : 'Phone: +86 123 456 789',
+            logo: 'https://via.placeholder.com/80', // Placeholder logo
+        },
+        {
+            name: isChinese ? '公司 2' : '360 Health',
             address: isChinese ? '地址: yy' : 'Address: yy',
             email: 'contact@company.com',
             phone: isChinese ? '电话: +86 987 654 321' : 'Phone: +86 987 654 321',

@@ -6,6 +6,7 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Footer from './Footer';
+import BreadcrumbDisplay from "./BreadcrumbDisplay";
 import { Layout, Tooltip } from 'antd';
 import logo from './image/Logo_Bio.jpeg';
 
@@ -41,19 +42,26 @@ const App: React.FC = () => {
         { title: '首页', path: '/' },
         { title: '关于我们', path: '/about-us' },
         {
-            title: '保健品',
+            title: '保健品', path: '/products',
             submenu: [
-                { title: '功能性保健品', path: '/functional' },
-                { title: '日常保健', path: '/daily' },
+                { title: '功能性保健品', path: '/products/functional' },
+                { title: '日常保健', path: '/products/daily-health' },
             ],
         },
         {
-            title: '百生健康体验连锁门店',
+            title: '百生健康体验连锁门店', path: '/360health',
             submenu: [
-                { title: '我们的核心理念', path: '/core-concept' },
-                { title: '客户群体/活动', path: '/customer-events' },
-                { title: '经营模式', path: '/business-model' },
+                { title: '我们的核心理念', path: '/360health/core-concept' },
+                { title: '客户群体/活动', path: '/360health/customer-events' },
+                { title: '经营模式', path: '/360health/business-model' },
             ],
+        },
+        {
+            title: '医疗器械', path: '/medical-equipment',
+            submenu: [
+                {title: '代理商产品（武汉楚精灵）', path: '/medical-equipment/EndoAngel'},
+                {title: '会晤照片', path: '/medical-equipment/Eventphoto'},
+            ]
         },
         { title: '联系我们', path: '/contact' },
     ];
@@ -96,6 +104,8 @@ const App: React.FC = () => {
                         </button>
                     </div>
                 </Header>
+                {/*显示状态栏*/}
+                <BreadcrumbDisplay isChinese={isChinese} />
 
                 {/* Main Content Section */}
                 <Layout>
