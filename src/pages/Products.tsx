@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from "./Contact";
 
 interface ProductsProps {
   isLargeFont: boolean; // 动态字体大小
@@ -26,3 +27,5 @@ const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
         </div>
     )
 }
+
+export default Products;

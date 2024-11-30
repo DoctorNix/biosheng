@@ -1,0 +1,97 @@
+.navbar {
+    background-color: #f0f2f5;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    position: relative; /* Ensure submenu positioning works properly */
+}
+
+.menu-item {
+    position: relative; /* Position submenu relative to its parent */
+}
+
+.menu-link {
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.menu-link:hover {
+    color: #1677ff;
+}
+
+/* Submenu Style */
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    display: none; /* Initially hidden */
+    position: absolute; /* Positioned relative to the parent menu item */
+    top: 100%; /* Place below the parent menu item */
+    left: 0;
+    background-color: #ffffff; /* Background color for submenu */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better contrast */
+    border-radius: 8px; /* Rounded corners */
+    z-index: 10; /* Ensure submenu appears above other content */
+    min-width: 150px; /* Minimum width for submenu */
+}
+
+/* Show submenu on hover */
+.menu-item:hover .submenu {
+    display: flex; /* Display submenu when hovering over the parent menu item */
+    flex-direction: column; /* Stack submenu items vertically */
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* Submenu Item */
+.submenu-item {
+    text-align: left;
+    padding: 5px 10px; /* Add padding for clickability */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.submenu-link {
+    display: block;
+    text-decoration: none;
+    color: black; /* Default text color */
+    font-size: 1rem; /* Base font size */
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.submenu-link:hover {
+    color: #1677ff; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Stack main menu items vertically on smaller screens */
+        gap: 10px;
+    }
+
+    .menu-link {
+        font-size: 0.9rem; /* Adjust font size on smaller screens */
+    }
+
+    .submenu {
+        position: relative; /* Allow submenu to stay within bounds */
+        box-shadow: none;
+        min-width: auto; /* Adjust width for smaller screens */
+    }
+
+    .submenu-item {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
