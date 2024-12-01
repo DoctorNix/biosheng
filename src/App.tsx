@@ -6,9 +6,10 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Footer from './Footer';
-import BreadcrumbDisplay from "./BreadcrumbDisplay";
 import { Layout, Tooltip } from 'antd';
-import logo from './image/Logo_Bio.jpeg';
+import logo from './image/Logo_Biosheng.jpeg';
+import background from './image/Background.jpeg';
+import BreadcrumbDisplay from "./BreadcrumbDisplay";
 
 const { Header, Content } = Layout;
 
@@ -20,15 +21,21 @@ const headerStyle: React.CSSProperties = {
     height: 64,
     paddingInline: 48,
     lineHeight: '64px',
-    backgroundColor: '#4096ff',
+    backgroundColor: 'white',
 };
 
 const contentStyle: React.CSSProperties = {
     textAlign: 'center',
     minHeight: 'calc(100vh - 200px)', // Adjust based on header and footer height
     padding: '20px',
-    backgroundColor: '#f9f9f9',
-    borderRadius: 8,
+    border: '2px solid rgba(0, 0, 0, 0.1)', // Add a light border
+    borderRadius: '8px', // Rounded corners
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background
+    backgroundImage: `url(${background})`,
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow
+    backdropFilter: 'blur(5px)', // Optional: Blur background for effect
+    margin: '20px', // Add margin for spacing
+    color: '#000', // Ensure text is visible
 };
 
 const App: React.FC = () => {
@@ -44,24 +51,23 @@ const App: React.FC = () => {
         {
             title: '保健品', path: '/products',
             submenu: [
-                { title: '功能性保健品', path: '/products/functional' },
-                { title: '日常保健', path: '/products/daily-health' },
+                { title: '功能性保健品', path: '/functional' },
+                { title: '日常保健', path: '/daily' },
             ],
         },
         {
-            title: '百生健康体验连锁门店', path: '/360health',
+            title: '百生健康体验连锁门店',
             submenu: [
-                { title: '我们的核心理念', path: '/360health/core-concept' },
-                { title: '客户群体/活动', path: '/360health/customer-events' },
-                { title: '经营模式', path: '/360health/business-model' },
+                { title: '我们的核心理念', path: '/core-concept' },
+                { title: '客户群体/活动', path: '/customer-events' },
+                { title: '经营模式', path: '/business-model' },
             ],
         },
         {
-            title: '医疗器械', path: '/medical-equipment',
+            title: 'AI医疗器械',
             submenu: [
-                {title: '代理商产品（武汉楚精灵）', path: '/medical-equipment/EndoAngel'},
-                {title: '会晤照片', path: '/medical-equipment/Eventphoto'},
-            ]
+                {title: '武汉楚精灵', path: '/EndoAngel' },
+            ],
         },
         { title: '联系我们', path: '/contact' },
     ];
@@ -72,10 +78,12 @@ const App: React.FC = () => {
                 {/* Header Section */}
                 <Header style={headerStyle}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                        <img src={logo} alt="Logo" style={{ height: '40px' }} />
+                        <img src={logo} alt="Logo" style={{ height: '70px' }} />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'self-end', gap: '20px' }}>
                         <Navbar menuItems={menuItems} isChinese={isChinese} isLargeFont={isLargeFont} />
                     </div>
-                    <div style={{ display: 'flex', gap: '10px' }}>
+                    <div style={{ display: 'flex', gap: '10px', color: '#000' }}>
                         <Tooltip title={isChinese ? '切换到英文' : 'Switch to Chinese'}>
                             <button
                                 onClick={toggleLanguage}
@@ -103,13 +111,13 @@ const App: React.FC = () => {
                             🧓
                         </button>
                     </div>
+
                 </Header>
-                {/*显示状态栏*/}
-                <BreadcrumbDisplay isChinese={isChinese} />
 
                 {/* Main Content Section */}
                 <Layout>
                     <Content style={contentStyle}>
+                        <BreadcrumbDisplay isChinese={isChinese} />
                         <Routes>
                             <Route
                                 path="/"

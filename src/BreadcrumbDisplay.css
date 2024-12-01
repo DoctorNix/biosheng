@@ -1,0 +1,51 @@
+/* 面包屑整体样式 */
+.ant-breadcrumb {
+    font-size: 1rem; /* 设置默认字体大小 */
+    margin-bottom: 16px; /* 与其他内容保持间距 */
+    color: #595959; /* 默认文字颜色 */
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    padding: 8px 16px; /* 添加内边距 */
+    border-radius: 8px; /* 圆角边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    display: inline-block; /* 让面包屑不占整行 */
+}
+
+/* 面包屑链接样式 */
+.ant-breadcrumb a {
+    color: #1677ff; /* 设置链接颜色 */
+    text-decoration: none; /* 移除下划线 */
+    transition: color 0.3s ease; /* 悬停动画 */
+}
+
+.ant-breadcrumb a:hover {
+    color: #0056b3; /* 鼠标悬停时颜色变化 */
+    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
+
+/* 面包屑分隔符 */
+.ant-breadcrumb-separator {
+    margin: 0 8px; /* 分隔符的左右间距 */
+    color: #bfbfbf; /* 分隔符颜色 */
+}
+
+/* 当前页面文字样式 */
+.ant-breadcrumb span {
+    font-weight: bold; /* 突出显示当前页面 */
+    color: #000; /* 当前页面文字颜色 */
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .ant-breadcrumb {
+        font-size: 0.9rem; /* 在小屏幕上调整字体大小 */
+        padding: 6px 12px; /* 减少内边距 */
+    }
+
+    .ant-breadcrumb a {
+        color: #1677ff; /* 保持链接颜色 */
+    }
+
+    .ant-breadcrumb-separator {
+        margin: 0 4px; /* 减小分隔符间距 */
+    }
+}

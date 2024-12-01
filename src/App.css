@@ -1,83 +1,48 @@
-/* 页面整体布局 */
-.App {
-  display: flex;
+/* 页面背景 */
+.app-background {
+  background-size: cover; /* 使背景图片覆盖整个页面 */
+  background-position: center; /* 居中显示 */
+  background-repeat: no-repeat; /* 防止图片重复 */
+  min-height: 100vh; /* 确保高度至少为屏幕高度 */
+  width: 100%; /* 确保背景图片适应全屏宽度 */
+  display: flex; /* 保持子元素的布局 */
   flex-direction: column;
-  min-height: 100vh; /* 页面高度填充窗口 */
-  background-color: #282c34; /* 页面背景色，与顶部一致 */
-  color: white; /* 全局字体颜色 */
 }
 
-/* 主内容区域，占据剩余空间 */
+/* 主内容 */
 .App-main {
-  flex: 1; /* 自动填充剩余空间 */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center; /* 垂直居中 */
   align-items: center; /* 水平居中 */
   padding: 20px;
-  background-color: white; /* 确保与顶部背景一致 */
-  color: black; /* 主内容颜色 */
 }
 
-/* 顶部导航栏样式 */
+/* Header 样式 */
 .App-header {
-  background-color: orange; /* 顶部背景色，与整体统一 */
+  background-color: rgba(64, 150, 255, 0.8); /* 半透明蓝色背景 */
   padding: 20px;
-  color: white;
   display: flex;
-  
-  justify-content: space-between; /* 顶部导航两侧对齐 */
+  justify-content: space-between;
   align-items: center;
-  font-size: calc(10px + 2vmin); /* 响应式字体大小 */
 }
 
 /* Footer 样式 */
 footer {
-  background-color: #333333; /* Footer 背景色 */
-  color: white; /* 文字颜色 */
-  text-align: center; /* 居中对齐 */
-  padding: 20px; /* 上下内边距 */
-  font-size: 1rem; /* 字体大小 */
-}
-
-/* 动态 Logo 样式 */
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-/* 动画效果 */
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* 链接样式 */
-.App-link {
-  color: #61dafb; /* 蓝色链接，与整体背景形成对比 */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 /* 响应式优化 */
 @media (max-width: 768px) {
   .App-header {
-    flex-direction: column; /* 在小屏幕上导航栏垂直排列 */
+    flex-direction: column;
     align-items: center;
   }
   .App-main {
-    padding: 10px; /* 小屏幕上减少内边距 */
-  }
-  footer {
-    font-size: 0.9rem; /* Footer 字体适配小屏幕 */
-    padding: 15px;
+    padding: 10px;
   }
 }

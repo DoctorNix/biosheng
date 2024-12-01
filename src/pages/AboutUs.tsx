@@ -13,7 +13,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ isChinese, isLargeFont }) => {
                 textAlign: 'center',
                 fontSize: isLargeFont ? '1.5rem' : '1rem',
                 backgroundColor: '#f9f9f9',
-                minHeight: '100vh',
+                minHeight: '100%',
             }}
         >
             {/* About Us Section */}
@@ -22,7 +22,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ isChinese, isLargeFont }) => {
                     marginBottom: '40px',
                     padding: '20px',
                     backgroundColor: '#ffffff',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.8)',
                     borderRadius: '8px',
                 }}
             >
@@ -47,7 +47,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ isChinese, isLargeFont }) => {
                     marginBottom: '40px',
                     padding: '20px',
                     backgroundColor: '#ffffff',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.8)',
                     borderRadius: '8px',
                 }}
             >
@@ -71,7 +71,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ isChinese, isLargeFont }) => {
                 style={{
                     padding: '20px',
                     backgroundColor: '#ffffff',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.8)',
                     borderRadius: '8px',
                 }}
             >

@@ -1,4 +1,6 @@
 import React, { CSSProperties } from 'react';
+import { SearchOutlined} from "@ant-design/icons";
+import {Button, Flex, Tooltip} from "antd";
 
 interface FooterProps {
     isChinese: boolean;
@@ -23,6 +25,7 @@ const Footer: React.FC<FooterProps> = ({ isChinese, isLargeFont }) => {
                     : 'Friendly Links To: Wuhan EndoAngel Medical Technology Co., LTD | Beijing Biosheng Health | More Partners…'}
             </p>
             <p>
+
                 {isChinese
                     ? '版权所有 © 2024 百生健康. 保留所有权利。'
                     : '© 2024 Biosheng Health. All Rights Reserved.'}
