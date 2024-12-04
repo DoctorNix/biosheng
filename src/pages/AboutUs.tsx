@@ -1,4 +1,6 @@
 import React from 'react';
+import { content } from '../content';
+import { AboutUsContent } from '../content/types';
 
 interface AboutUsProps {
     isChinese: boolean;
@@ -6,23 +8,25 @@ interface AboutUsProps {
 }
 
 const AboutUs: React.FC<AboutUsProps> = ({ isChinese, isLargeFont }) => {
+    const language = isChinese ? 'zh' : 'en';
+    const aboutUsContent: AboutUsContent = content[language].aboutUs;
+
     return (
         <div
             style={{
                 padding: '40px 20px',
                 textAlign: 'center',
                 fontSize: isLargeFont ? '1.5rem' : '1rem',
-                backgroundColor: '#f9f9f9',
                 minHeight: '100%',
             }}
         >
-            {/* About Us Section */}
+            {/* 关于我们部分 */}
             <section
                 style={{
                     marginBottom: '40px',
                     padding: '20px',
-                    backgroundColor: '#ffffff',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.8)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                     borderRadius: '8px',
                 }}
             >
@@ -32,22 +36,18 @@ const AboutUs: React.FC<AboutUsProps> = ({ isChinese, isLargeFont }) => {
                         marginBottom: '20px',
                     }}
                 >
-                    {isChinese ? '关于我们' : 'About Us'}
+                    {aboutUsContent.title}
                 </h1>
-                <p>
-                    {isChinese
-                        ? '百生健康致力于提供卓越的健康体验，通过专业团队和优质产品改善您的生活。'
-                        : 'Biosheng Health is dedicated to providing excellent health experiences, improving your life with professional teams and quality products.'}
-                </p>
+                <p>{aboutUsContent.description}</p>
             </section>
 
-            {/* Core Values Section */}
+            {/* 核心理念部分 */}
             <section
                 style={{
                     marginBottom: '40px',
                     padding: '20px',
-                    backgroundColor: '#ffffff',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.8)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                     borderRadius: '8px',
                 }}
             >
@@ -57,21 +57,17 @@ const AboutUs: React.FC<AboutUsProps> = ({ isChinese, isLargeFont }) => {
                         marginBottom: '20px',
                     }}
                 >
-                    {isChinese ? '核心理念' : 'Core Values'}
+                    {aboutUsContent.coreValuesTitle}
                 </h2>
-                <p>
-                    {isChinese
-                        ? '我们始终坚持以客户为中心，通过创新产品和个性化服务满足多样化需求。'
-                        : 'We are committed to customer-centric principles, meeting diverse needs with innovative products and personalized services.'}
-                </p>
+                <p>{aboutUsContent.coreValuesDescription}</p>
             </section>
 
-            {/* Team Section */}
+            {/* 团队部分 */}
             <section
                 style={{
                     padding: '20px',
-                    backgroundColor: '#ffffff',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.8)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                     borderRadius: '8px',
                 }}
             >
@@ -81,13 +77,9 @@ const AboutUs: React.FC<AboutUsProps> = ({ isChinese, isLargeFont }) => {
                         marginBottom: '20px',
                     }}
                 >
-                    {isChinese ? '我们的团队' : 'Our Team'}
+                    {aboutUsContent.teamTitle}
                 </h2>
-                <p>
-                    {isChinese
-                        ? '我们的专业团队由健康顾问、技术专家和运营团队组成，为您提供最佳服务。'
-                        : 'Our professional team includes health consultants, technical experts, and operational staff to deliver the best services.'}
-                </p>
+                <p>{aboutUsContent.teamDescription}</p>
             </section>
         </div>
     );

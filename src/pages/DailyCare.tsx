@@ -1,17 +1,17 @@
-// Products.tsx
+// DailyCare.tsx
 
 import React from 'react';
 import { content } from '../content';
-import { ProductsContent, ProductItem } from '../content/types';
+import { DailyCareContent, ProductItem } from '../content/types';
 
-interface ProductsProps {
+interface DailyCareProps {
     isLargeFont: boolean;
     isChinese: boolean;
 }
 
-const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
+const DailyCare: React.FC<DailyCareProps> = ({ isLargeFont, isChinese }) => {
     const language = isChinese ? 'zh' : 'en';
-    const productsContent: ProductsContent = content[language].products;
+    const dailyCareContent: DailyCareContent = content[language].dailyCare;
 
     return (
         <div
@@ -28,9 +28,9 @@ const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
                     textAlign: 'center',
                 }}
             >
-                {productsContent.title}
+                {dailyCareContent.title}
             </h1>
-            <p style={{ textAlign: 'center' }}>{productsContent.description}</p>
+            <p style={{ textAlign: 'center' }}>{dailyCareContent.description}</p>
 
             <div
                 style={{
@@ -40,7 +40,7 @@ const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
                     marginTop: '40px',
                 }}
             >
-                {productsContent.products.map((product: ProductItem) => (
+                {dailyCareContent.products.map((product: ProductItem) => (
                     <div
                         key={product.id}
                         style={{
@@ -69,4 +69,4 @@ const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
     );
 };
 
-export default Products;
+export default DailyCare;

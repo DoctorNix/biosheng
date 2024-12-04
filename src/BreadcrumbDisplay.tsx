@@ -21,6 +21,7 @@ const BreadcrumbDisplay: React.FC<BreadcrumbDisplayProps> = ({ isChinese }) => {
         contact: isChinese ? '联系我们' : 'Contact Us',
         products: isChinese ? '保健品': 'Health Products',
         '360health': isChinese ? '百生健康' : '360health',
+        EndoAngel: isChinese ? "武汉楚精灵":'EndoAngel',
     };
 
     const breadcrumbItems = [

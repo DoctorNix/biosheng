@@ -6,6 +6,8 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Footer from './Footer';
+import Functional from './pages/Functional';
+import DailyCare from './pages/DailyCare';
 import { Layout, Tooltip } from 'antd';
 import logo from './image/Logo_Biosheng.jpeg';
 import background from './image/Background.jpeg';
@@ -43,8 +45,8 @@ const App: React.FC = () => {
         {
             title: '保健品', path: '/products',
             submenu: [
-                { title: '功能性保健品', path: '/functional' },
-                { title: '日常保健', path: '/daily' },
+                { title: '功能性保健品', path: '/products/functional' },
+                { title: '日常保健', path: '/products/daily-care' },
             ],
         },
         {
@@ -91,7 +93,7 @@ const App: React.FC = () => {
                                     style={{
                                         background: 'none',
                                         border: 'none',
-                                        color: 'white',
+                                        color: 'black',
                                         cursor: 'pointer',
                                         fontSize: isLargeFont ? '1.5rem' : '1rem',
                                     }}
@@ -155,6 +157,14 @@ const App: React.FC = () => {
                                     <Route
                                         path="/contact"
                                         element={<Contact isChinese={isChinese} isLargeFont={isLargeFont}/>}
+                                    />
+                                    <Route
+                                        path="/products/functional"
+                                        element={<Functional isChinese={isChinese} isLargeFont={isLargeFont}/>}
+                                    />
+                                    <Route
+                                        path="/products/daily-care"
+                                        element={<DailyCare isChinese={isChinese} isLargeFont={isLargeFont}/>}
                                     />
                                 </Routes>
                             </div>
