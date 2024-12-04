@@ -1,5 +1,3 @@
-// content/dailyCareContent.en.ts
-
 import { DailyCareContent } from './types';
 
 const dailyCareContent: DailyCareContent = {

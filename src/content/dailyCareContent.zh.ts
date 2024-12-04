@@ -1,5 +1,3 @@
-// content/dailyCareContent.zh.ts
-
 import { DailyCareContent } from './types';
 
 const dailyCareContent: DailyCareContent = {

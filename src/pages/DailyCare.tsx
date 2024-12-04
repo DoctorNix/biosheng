@@ -1,5 +1,3 @@
-// DailyCare.tsx
-
 import React from 'react';
 import { content } from '../content';
 import { DailyCareContent, ProductItem } from '../content/types';

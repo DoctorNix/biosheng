@@ -8,6 +8,9 @@ import Products from './pages/Products';
 import Footer from './Footer';
 import Functional from './pages/Functional';
 import DailyCare from './pages/DailyCare';
+import EndoAngel from './pages/EndoAngel';
+import CoreConcept from './pages/CoreConcept';
+import BusinessModel from './pages/BusinessModel';
 import { Layout, Tooltip } from 'antd';
 import logo from './image/Logo_Biosheng.jpeg';
 import background from './image/Background.jpeg';
@@ -24,12 +27,13 @@ const headerStyle: React.CSSProperties = {
     paddingInline: 48,
     lineHeight: '64px',
     backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background
-    borderBottom: '1px solid rgba(0, 0, 0, 0.1)', // Optional border
+    borderBottom: '1px solid rgba(0, 0, 0, 0.2)', // Optional border
 };
 
 const contentStyle: React.CSSProperties = {
     padding: '20px',
     background: 'transparent',
+    left: 0,
 };
 
 const App: React.FC = () => {
@@ -135,10 +139,10 @@ const App: React.FC = () => {
                                         path="/"
                                         element={
                                             <div>
-                                                <h1 style={{fontSize: isLargeFont ? '3rem' : '2rem'}}>
+                                                <h1 style={{fontSize: isLargeFont ? '3rem' : '2rem', alignItems: 'center',}}>
                                                     {isChinese ? '欢迎来到百生健康' : 'Welcome to Biosheng'}
                                                 </h1>
-                                                <p style={{fontSize: isLargeFont ? '1.5rem' : '1rem'}}>
+                                                <p style={{fontSize: isLargeFont ? '1.5rem' : '1rem', alignItems: 'center',}}>
                                                     {isChinese
                                                         ? '百生是您的购物首选。'
                                                         : 'Biosheng is your first choice for shopping!'}
@@ -165,6 +169,18 @@ const App: React.FC = () => {
                                     <Route
                                         path="/products/daily-care"
                                         element={<DailyCare isChinese={isChinese} isLargeFont={isLargeFont}/>}
+                                    />
+                                    <Route
+                                        path="/EndoAngel"
+                                        element={<EndoAngel isLargeFont={isLargeFont} isChinese={isChinese}/>}
+                                    />
+                                    <Route
+                                        path="/core-concept"
+                                        element={<CoreConcept isLargeFont={isLargeFont} isChinese={isChinese}/>}
+                                    />
+                                    <Route
+                                        path="/business-model"
+                                        element={<BusinessModel isChinese={isChinese} isLargeFont={isLargeFont} />}
                                     />
                                 </Routes>
                             </div>

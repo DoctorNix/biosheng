@@ -12,7 +12,7 @@
 
 /* 面包屑链接样式 */
 .ant-breadcrumb a {
-    color: #1677ff; /* 设置链接颜色 */
+    color: black; /* 设置链接颜色 */
     text-decoration: none; /* 移除下划线 */
     transition: color 0.3s ease; /* 悬停动画 */
 }
