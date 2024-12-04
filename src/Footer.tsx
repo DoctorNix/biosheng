@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({ isChinese, isLargeFont }) => {
                 {isChinese ? (
                     <>
                         友情链接：
-                        <a href="https://www.chujingling.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.endoangel.cn/" target="_blank" rel="noopener noreferrer">
                             武汉楚精灵
                         </a>
                         {/*{' | '}*/}
@@ -35,7 +35,7 @@ const Footer: React.FC<FooterProps> = ({ isChinese, isLargeFont }) => {
                 ) : (
                     <>
                         Friendly Links To:{' '}
-                        <a href="https://www.chujingling.com/en" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.endoangel.cn/" target="_blank" rel="noopener noreferrer">
                             Wuhan EndoAngel Medical Technology Co., LTD
                         </a>
                         {/*{' | '}*/}
@@ -49,8 +49,8 @@ const Footer: React.FC<FooterProps> = ({ isChinese, isLargeFont }) => {
             <p>
 
                 {isChinese
-                    ? '版权所有 © 2024 百生健康. 保留所有权利。'
-                    : '© 2024 Biosheng Health. All Rights Reserved.'}
+                    ? '版权所有©2024 百生健康. 保留所有权利。'
+                    : 'Copyrights©2024 Biosheng Health. All Rights Reserved.'}
             </p>
         </footer>
     );

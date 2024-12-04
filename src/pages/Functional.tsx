@@ -1,17 +1,17 @@
-// Products.tsx
+// Functional.tsx
 
 import React from 'react';
 import { content } from '../content';
-import { ProductsContent, ProductItem } from '../content/types';
+import { FunctionalContent, ProductItem } from '../content/types';
 
-interface ProductsProps {
+interface FunctionalProps {
     isLargeFont: boolean;
     isChinese: boolean;
 }
 
-const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
+const Functional: React.FC<FunctionalProps> = ({ isLargeFont, isChinese }) => {
     const language = isChinese ? 'zh' : 'en';
-    const productsContent: ProductsContent = content[language].products;
+    const functionalContent: FunctionalContent = content[language].functional;
 
     return (
         <div
@@ -28,9 +28,9 @@ const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
                     textAlign: 'center',
                 }}
             >
-                {productsContent.title}
+                {functionalContent.title}
             </h1>
-            <p style={{ textAlign: 'center' }}>{productsContent.description}</p>
+            <p style={{ textAlign: 'center' }}>{functionalContent.description}</p>
 
             <div
                 style={{
@@ -40,7 +40,7 @@ const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
                     marginTop: '40px',
                 }}
             >
-                {productsContent.products.map((product: ProductItem) => (
+                {functionalContent.products.map((product: ProductItem) => (
                     <div
                         key={product.id}
                         style={{
@@ -69,4 +69,4 @@ const Products: React.FC<ProductsProps> = ({ isLargeFont, isChinese }) => {
     );
 };
 
-export default Products;
+export default Functional;
