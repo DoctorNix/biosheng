@@ -20,9 +20,31 @@ const Footer: React.FC<FooterProps> = ({ isChinese, isLargeFont }) => {
             }}
         >
             <p>
-                {isChinese
-                    ? '友情链接：武汉楚精灵 | 北京百生健康 | 更多合作伙伴…'
-                    : 'Friendly Links To: Wuhan EndoAngel Medical Technology Co., LTD | Beijing Biosheng Health | More Partners…'}
+                {isChinese ? (
+                    <>
+                        友情链接：
+                        <a href="https://www.chujingling.com" target="_blank" rel="noopener noreferrer">
+                            武汉楚精灵
+                        </a>
+                        {/*{' | '}*/}
+                        {/*<a href="https://www.biosheng.com" target="_blank" rel="noopener noreferrer">*/}
+                        {/*    北京百生健康*/}
+                        {/*</a>*/}
+                        {' | 更多合作伙伴…'}
+                    </>
+                ) : (
+                    <>
+                        Friendly Links To:{' '}
+                        <a href="https://www.chujingling.com/en" target="_blank" rel="noopener noreferrer">
+                            Wuhan EndoAngel Medical Technology Co., LTD
+                        </a>
+                        {/*{' | '}*/}
+                        {/*<a href="https://www.biosheng.com/en" target="_blank" rel="noopener noreferrer">*/}
+                        {/*    Beijing Biosheng Health*/}
+                        {/*</a>*/}
+                        {' | More Partners…'}
+                    </>
+                )}
             </p>
             <p>
 

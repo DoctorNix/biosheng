@@ -21,21 +21,13 @@ const headerStyle: React.CSSProperties = {
     height: 64,
     paddingInline: 48,
     lineHeight: '64px',
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background
+    borderBottom: '1px solid rgba(0, 0, 0, 0.1)', // Optional border
 };
 
 const contentStyle: React.CSSProperties = {
-    textAlign: 'center',
-    minHeight: 'calc(100vh - 200px)', // Adjust based on header and footer height
     padding: '20px',
-    border: '2px solid rgba(0, 0, 0, 0.1)', // Add a light border
-    borderRadius: '8px', // Rounded corners
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background
-    backgroundImage: `url(${background})`,
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow
-    backdropFilter: 'blur(5px)', // Optional: Blur background for effect
-    margin: '20px', // Add margin for spacing
-    color: '#000', // Ensure text is visible
+    background: 'transparent',
 };
 
 const App: React.FC = () => {
@@ -74,87 +66,107 @@ const App: React.FC = () => {
 
     return (
         <Router>
-            <Layout>
-                {/* Header Section */}
-                <Header style={headerStyle}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                        <img src={logo} alt="Logo" style={{ height: '70px' }} />
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'self-end', gap: '20px' }}>
-                        <Navbar menuItems={menuItems} isChinese={isChinese} isLargeFont={isLargeFont} />
-                    </div>
-                    <div style={{ display: 'flex', gap: '10px', color: '#000' }}>
-                        <Tooltip title={isChinese ? '切换到英文' : 'Switch to Chinese'}>
+            <div
+                style={{
+                    backgroundImage: `url(${background})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    minHeight: '100vh',
+                }}
+            >
+                <Layout>
+                    {/* Header Section */}
+                    <Header style={headerStyle}>
+                        <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
+                            <img src={logo} alt="Logo" style={{height: '70px'}}/>
+                        </div>
+                        <div style={{display: 'flex', alignItems: 'self-end', gap: '20px'}}>
+                            <Navbar menuItems={menuItems} isChinese={isChinese} isLargeFont={isLargeFont}/>
+                        </div>
+                        <div style={{display: 'flex', gap: '10px', color: '#000'}}>
+                            <Tooltip title={isChinese ? '切换到英文' : 'Switch to Chinese'}>
+                                <button
+                                    onClick={toggleLanguage}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        color: 'white',
+                                        cursor: 'pointer',
+                                        fontSize: isLargeFont ? '1.5rem' : '1rem',
+                                    }}
+                                >
+                                    {isChinese ? 'Eng' : '中'}
+                                </button>
+                            </Tooltip>
                             <button
-                                onClick={toggleLanguage}
+                                onClick={toggleFontSize}
                                 style={{
                                     background: 'none',
                                     border: 'none',
                                     color: 'white',
                                     cursor: 'pointer',
-                                    fontSize: isLargeFont ? '1.5rem' : '1rem',
+                                    fontSize: '1.2rem',
                                 }}
                             >
-                                {isChinese ? 'Eng' : '中'}
+                                🧓
                             </button>
-                        </Tooltip>
-                        <button
-                            onClick={toggleFontSize}
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                color: 'white',
-                                cursor: 'pointer',
-                                fontSize: '1.2rem',
-                            }}
-                        >
-                            🧓
-                        </button>
-                    </div>
+                        </div>
 
-                </Header>
+                    </Header>
 
-                {/* Main Content Section */}
-                <Layout>
-                    <Content style={contentStyle}>
-                        <BreadcrumbDisplay isChinese={isChinese} />
-                        <Routes>
-                            <Route
-                                path="/"
-                                element={
-                                    <div>
-                                        <h1 style={{ fontSize: isLargeFont ? '3rem' : '2rem' }}>
-                                            {isChinese ? '欢迎来到百生健康' : 'Welcome to Biosheng'}
-                                        </h1>
-                                        <p style={{ fontSize: isLargeFont ? '1.5rem' : '1rem' }}>
-                                            {isChinese
-                                                ? '百生是您的购物首选。'
-                                                : 'Biosheng is your first choice for shopping!'}
-                                        </p>
-                                    </div>
-                                }
-                            />
-                            <Route
-                                path="/about-us"
-                                element={<AboutUs isChinese={isChinese} isLargeFont={isLargeFont} />}
-                            />
-                            <Route
-                                path="/products"
-                                element={<Products isChinese={isChinese} isLargeFont={isLargeFont} />}
-                            />
-                            <Route
-                                path="/contact"
-                                element={<Contact isChinese={isChinese} isLargeFont={isLargeFont} />}
-                            />
-                        </Routes>
-                    </Content>
+                    {/* Main Content Section */}
+                    <Layout>
+                        <Content style={contentStyle}>
+                            <div
+                                style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background
+                                    padding: '20px',
+                                    borderRadius: '8px',
+                                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                                    backdropFilter: 'blur(5px)',
+                                }}
+                            >
+                                <BreadcrumbDisplay isChinese={isChinese}/>
+                                <Routes>
+                                    <Route
+                                        path="/"
+                                        element={
+                                            <div>
+                                                <h1 style={{fontSize: isLargeFont ? '3rem' : '2rem'}}>
+                                                    {isChinese ? '欢迎来到百生健康' : 'Welcome to Biosheng'}
+                                                </h1>
+                                                <p style={{fontSize: isLargeFont ? '1.5rem' : '1rem'}}>
+                                                    {isChinese
+                                                        ? '百生是您的购物首选。'
+                                                        : 'Biosheng is your first choice for shopping!'}
+                                                </p>
+                                            </div>
+                                        }
+                                    />
+                                    <Route
+                                        path="/about-us"
+                                        element={<AboutUs isChinese={isChinese} isLargeFont={isLargeFont}/>}
+                                    />
+                                    <Route
+                                        path="/products"
+                                        element={<Products isChinese={isChinese} isLargeFont={isLargeFont}/>}
+                                    />
+                                    <Route
+                                        path="/contact"
+                                        element={<Contact isChinese={isChinese} isLargeFont={isLargeFont}/>}
+                                    />
+                                </Routes>
+                            </div>
+                        </Content>
+                    </Layout>
+
+                    {/* Footer Section */}
+                    <Footer isChinese={isChinese} isLargeFont={isLargeFont}/>
                 </Layout>
-
-                {/* Footer Section */}
-                <Footer isChinese={isChinese} isLargeFont={isLargeFont} />
-            </Layout>
+            </div>
         </Router>
-    );
+);
 };
 
 export default App;
