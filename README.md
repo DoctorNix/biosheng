@@ -44,3 +44,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# 关于内容的方面
+
+## 代码部分都在src，后续要加图片请放入src/image里（专门放图片的），命名规则方面请尽量使用英语
+
+## 内容修改请到src/contents，contents里的文件名带zh的是中文内容，en是英文内容，如果需要大面积修改请联系开发者（Wechat：Panyizhen1127）
