@@ -11,6 +11,7 @@ import DailyCare from './pages/DailyCare';
 import EndoAngel from './pages/EndoAngel';
 import CoreConcept from './pages/CoreConcept';
 import BusinessModel from './pages/BusinessModel';
+import Events from './pages/Events';
 import { Layout, Tooltip } from 'antd';
 import logo from './image/Logo_Biosheng.jpeg';
 import background from './image/Background.jpeg';
@@ -139,10 +140,10 @@ const App: React.FC = () => {
                                         path="/"
                                         element={
                                             <div>
-                                                <h1 style={{fontSize: isLargeFont ? '3rem' : '2rem', alignItems: 'center',}}>
+                                                <h1 style={{fontSize: isLargeFont ? '3rem' : '2rem', textAlign: 'center',}}>
                                                     {isChinese ? '欢迎来到百生健康' : 'Welcome to Biosheng'}
                                                 </h1>
-                                                <p style={{fontSize: isLargeFont ? '1.5rem' : '1rem', alignItems: 'center',}}>
+                                                <p style={{fontSize: isLargeFont ? '1.5rem' : '1rem', textAlign: 'center',}}>
                                                     {isChinese
                                                         ? '百生是您的购物首选。'
                                                         : 'Biosheng is your first choice for shopping!'}
@@ -181,6 +182,10 @@ const App: React.FC = () => {
                                     <Route
                                         path="/business-model"
                                         element={<BusinessModel isChinese={isChinese} isLargeFont={isLargeFont} />}
+                                    />
+                                    <Route
+                                    path="/customer-events"
+                                    element={<Events isChinese={isChinese} isLargeFont={isLargeFont}/> }
                                     />
                                 </Routes>
                             </div>

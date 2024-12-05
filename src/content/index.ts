@@ -13,6 +13,9 @@ import CoreConceptContentZh from "./coreConceptContent.zh";
 import CoreConceptContentEn from "./coreConceptContent.en";
 import businessModelContentZh from './businessModelContent.zh';
 import businessModelContentEn from './businessModelContent.en';
+import eventsContentZh from './eventsContent.zh';
+import eventsContentEn from './eventsContent.en';
+
 
 export const content: {zh: Content; en: Content} = {
     zh: {
@@ -23,6 +26,7 @@ export const content: {zh: Content; en: Content} = {
         endoAngel: EndoAngelContentZh,
         coreConcept: CoreConceptContentZh,
         businessModel: businessModelContentZh,
+        events: eventsContentZh,
     },
     en: {
         aboutUs: aboutUsContentEn,
@@ -32,5 +36,6 @@ export const content: {zh: Content; en: Content} = {
         endoAngel: EndoAngelContentEn,
         coreConcept: CoreConceptContentEn,
         businessModel: businessModelContentEn,
+        events: eventsContentEn,
     },
 };

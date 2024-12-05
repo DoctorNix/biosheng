@@ -85,5 +85,5 @@ export interface Content {
     endoAngel: EndoAngelContent;
     coreConcept: CoreConceptContent;
     businessModel: BusinessModelContent;
-    // events: EventsContent;
+    events: EventsContent;
 }
