@@ -2,6 +2,7 @@
   "name": "biosheng",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://doctornix.github.io/biosheng.github.io/",
   "dependencies": {
     "@adobe/css-tools": "^4.4.1",
     "@ant-design/icons": "^5.5.2",
@@ -24,6 +25,8 @@
     "webpack": "^5.96.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
