@@ -50,11 +50,23 @@ export interface CoreConceptContent{
     coredescription: DescriptionItem[];
 }
 
+export interface StoreInfo {
+    id: number;
+    name: string;
+    address: string;
+    phone: string;
+    image?: string; // 门店图片
+    url?: string;
+    description?: string; // 可选的描述
+}
+
 export interface BusinessModelItem {
     id: number;
     title: string;
-    description: string;
-    image: string; // 图片的 URL 或路径
+    description?: string;
+    image?: string; // 图片的 URL 或路径
+    url?: string; //线上商城的url（目前）
+    stores?: StoreInfo[]; // 添加 stores 字段，可能为 undefined
 }
 
 export interface BusinessModelContent {
