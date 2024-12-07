@@ -2,7 +2,6 @@
   "name": "biosheng",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://doctornix.github.io/biosheng.github.io/",
   "dependencies": {
     "@adobe/css-tools": "^4.4.1",
     "@ant-design/icons": "^5.5.2",

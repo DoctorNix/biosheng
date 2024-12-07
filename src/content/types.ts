@@ -89,6 +89,17 @@ export interface EventsContent {
     events: EventItem[];
 }
 
+export interface Section {
+    id: string;
+    title: string;
+    content: string;
+}
+
+export interface BioshengHealthContent {
+    title: string;
+    sections: Section[];
+}
+
 export interface Content {
     aboutUs: AboutUsContent;
     products: ProductsContent;
@@ -98,4 +109,5 @@ export interface Content {
     coreConcept: CoreConceptContent;
     businessModel: BusinessModelContent;
     events: EventsContent;
+    bioshengHealth: BioshengHealthContent;
 }

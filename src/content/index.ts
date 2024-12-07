@@ -15,7 +15,8 @@ import businessModelContentZh from './businessModelContent.zh';
 import businessModelContentEn from './businessModelContent.en';
 import eventsContentZh from './eventsContent.zh';
 import eventsContentEn from './eventsContent.en';
-
+import bioshengHealthContentZh from "./bioshengHealthContent.zh";
+import bioshengHealthContentEn from "./bioshengHealthContent.en";
 
 export const content: {zh: Content; en: Content} = {
     zh: {
@@ -27,6 +28,7 @@ export const content: {zh: Content; en: Content} = {
         coreConcept: CoreConceptContentZh,
         businessModel: businessModelContentZh,
         events: eventsContentZh,
+        bioshengHealth: bioshengHealthContentZh,
     },
     en: {
         aboutUs: aboutUsContentEn,
@@ -37,5 +39,6 @@ export const content: {zh: Content; en: Content} = {
         coreConcept: CoreConceptContentEn,
         businessModel: businessModelContentEn,
         events: eventsContentEn,
+        bioshengHealth: bioshengHealthContentEn,
     },
 };

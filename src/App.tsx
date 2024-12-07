@@ -6,6 +6,7 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Footer from './Footer';
+import BioshengHealth from "./pages/BioshengHealth";
 import Functional from './pages/Functional';
 import DailyCare from './pages/DailyCare';
 import EndoAngel from './pages/EndoAngel';
@@ -145,15 +146,15 @@ const App: React.FC = () => {
                                                 </h1>
                                                 <p style={{fontSize: isLargeFont ? '1.5rem' : '1rem', textAlign: 'center',}}>
                                                     {isChinese
-                                                        ? '百生是您的购物首选。'
-                                                        : 'Biosheng is your first choice for shopping!'}
+                                                        ? '百生是您的健康首选。'
+                                                        : 'Biosheng is your first choice for health!'}
                                                 </p>
                                             </div>
                                         }
                                     />
                                     <Route
                                         path="/about-us"
-                                        element={<AboutUs isChinese={isChinese} isLargeFont={isLargeFont}/>}
+                                        element={<BioshengHealth isChinese={isChinese} isLargeFont={isLargeFont}/>}
                                     />
                                     <Route
                                         path="/products"

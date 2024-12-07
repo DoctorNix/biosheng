@@ -1,0 +1,28 @@
+.container {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    line-height: 1.8;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.section {
+    animation: fadeIn 1s ease-in;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
