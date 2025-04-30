@@ -1,12 +1,32 @@
 /* 页面背景 */
+/* Ensure all direct sections inside App-main align and match height */
+.App-main > div {
+  display: flex;
+  align-items: stretch;
+  min-height: 75vh; /* Increased for better layout uniformity */
+  margin-bottom: 40px;
+}
+
+/* Make inner items fill height and align nicely */
+.App-main > div > * {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
 .app-background {
-  background-size: cover; /* 使背景图片覆盖整个页面 */
-  background-position: center; /* 居中显示 */
-  background-repeat: no-repeat; /* 防止图片重复 */
-  min-height: 100vh; /* 确保高度至少为屏幕高度 */
-  width: 100%; /* 确保背景图片适应全屏宽度 */
-  display: flex; /* 保持子元素的布局 */
+  background: linear-gradient(135deg, #d9e4f5, #b2d8b2, #f5f5dc);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
   flex-direction: column;
+  backdrop-filter: blur(5px);
 }
 
 /* 主内容 */
@@ -17,6 +37,48 @@
   justify-content: center; /* 垂直居中 */
   align-items: center; /* 水平居中 */
   padding: 20px;
+}
+
+/* Banner Carousel */
+.banner-slide {
+  height: 60vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-slide::before,
+.banner-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  z-index: 1;
+}
+
+.banner-slide::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0));
+}
+
+.banner-slide::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0.9), rgba(255,255,255,0));
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 /* Header 样式 */
@@ -30,10 +92,52 @@
 
 /* Footer 样式 */
 footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
+  background-color: #88D498;
+  color: black;
+  text-align: left;
   padding: 20px;
+  border-top: 5px solid #61CE70;
+  gap: 40px;
+}
+
+/* Center text */
+.center-text {
+  text-align: center;
+}
+
+/* Brand section layout */
+.brand-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensure children fill height */
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.brand-description,
+.brand-logos {
+  flex: 1;
+  padding: 20px;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.brand-logos {
+  justify-content: flex-end;
+}
+
+.brand-logos img {
+  height: auto;
+  max-height: 200px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* 响应式优化 */
@@ -44,5 +148,50 @@ footer {
   }
   .App-main {
     padding: 10px;
+  }
+}
+
+/* Gray-themed image wrapper for modern, balanced look */
+.image-wrapper {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.image-caption {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .homepage-hero {
+    margin-bottom: 10px;
+  }
+
+  .brand-single-block,
+  .about-section {
+    padding: 20px !important;
+  }
+
+  .brand-single-text,
+  .about-section div {
+    word-break: break-word;
   }
 }

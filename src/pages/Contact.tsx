@@ -1,136 +1,66 @@
 import React from 'react';
+import { Typography, Row, Col, Card } from 'antd';
+import { StoreInfo } from '../pages-content/types';
+import { MailOutlined } from '@ant-design/icons';
+import { FacebookFilled } from '@ant-design/icons';
 
 interface ContactProps {
-    isChinese: boolean;
-    isLargeFont: boolean;
+  language: 'zh-CN' | 'zh-TW' | 'en';
+  isLargeFont: boolean;
+  email: string;
+  facebook: string;
+  stores: StoreInfo[];
 }
 
-// 这边是公司信息部分，修改信息在这里修，添加格式为：
-// {
-//     name: isChinese ? '公司名' : 'Company Name',
-//         address: isChinese ? '地址: xx' : 'Address: xx',
-//     email: 'xxx@company.com',
-//     phone: isChinese ? '电话: +86 123 456 789' : 'Phone: +86 123 456 789',
-//     logo: 'https://via.placeholder.com/80', // Placeholder logo
-// },
-const Contact: React.FC<ContactProps> = ({ isChinese, isLargeFont }) => {
-    const companies = [
-        {
-            name: isChinese ? '总公司' : 'Company',
-            address: isChinese ? '地址: xx' : 'Address: xx',
-            email: 'xxx@company.com',
-            phone: isChinese ? '电话: +86 123 456 789' : 'Phone: +86 123 456 789',
-            logo: 'https://via.placeholder.com/80', // Placeholder logo
-        },
-        {
-            name: isChinese ? '公司 1' : 'Live Mo',
-            address: isChinese ? '地址: xx' : 'Address: xx',
-            email: 'xxx@company.com',
-            phone: isChinese ? '电话: +86 123 456 789' : 'Phone: +86 123 456 789',
-            logo: 'https://via.placeholder.com/80', // Placeholder logo
-        },
-        {
-            name: isChinese ? '公司 2' : '360 Health',
-            address: isChinese ? '地址: yy' : 'Address: yy',
-            email: 'contact@company.com',
-            phone: isChinese ? '电话: +86 987 654 321' : 'Phone: +86 987 654 321',
-            logo: 'https://via.placeholder.com/80', // Placeholder logo
-        },
-    ];
+const Contact: React.FC<ContactProps> = ({ language, isLargeFont, email, facebook, stores }) => {
+  const titleMap = {
+    'zh-CN': '联系我们',
+    'zh-TW': '聯絡我們',
+    'en': 'Contact Us'
+  };
 
-    return (
-        <div
-            style={{
-                padding: '40px 20px',
-                backgroundColor: '#f9f9f9',
-                minHeight: '100vh',
-            }}
-        >
-            {/* Contact Title */}
-            <h1
-                style={{
-                    fontSize: isLargeFont ? '3rem' : '2.5rem',
-                    marginBottom: '20px',
-                    textAlign: 'center',
-                }}
-            >
-                {isChinese ? '联系我们' : 'Contact Us'}
-            </h1>
-            <p
-                style={{
-                    marginBottom: '40px',
-                    fontSize: isLargeFont ? '1.5rem' : '1rem',
-                    textAlign: 'center',
-                }}
-            >
-                {isChinese
-                    ? '以下是我们不同办公点的联系方式：'
-                    : 'Below is the contact information for our various office locations:'}
-            </p>
+  const emailText = {
+    'zh-CN': '联系邮箱',
+    'zh-TW': '聯絡信箱',
+    'en': 'Email'
+  };
 
-            {/* Contact Information Section */}
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '20px',
-                }}
-            >
-                {companies.map((company, index) => (
-                    <div
-                        key={index}
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            padding: '20px',
-                            backgroundColor: '#ffffff',
-                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                            borderRadius: '8px',
-                        }}
-                    >
-                        {/* Company Details */}
-                        <div style={{ flex: 1, textAlign: 'left' }}>
-                            <h2 style={{ marginBottom: '10px' }}>{company.name}</h2>
-                            <p style={{ marginBottom: '5px' }}>{company.address}</p>
-                            <p style={{ marginBottom: '5px' }}>{isChinese ? `邮箱: ${company.email}` : `Email: ${company.email}`}</p>
-                            <p>{company.phone}</p>
-                        </div>
+  return (
+    <div style={{ padding: '24px' }}>
+      <Typography.Title style={{ fontSize: isLargeFont ? '2.2rem' : '1.6rem' }}>
+        {titleMap[language]}
+      </Typography.Title>
 
-                        {/* Logo Section */}
-                        <img
-                            src={company.logo}
-                            alt={`${company.name} Logo`}
-                            style={{
-                                width: '80px',
-                                height: '80px',
-                                objectFit: 'cover',
-                                borderRadius: '8px',
-                                marginLeft: '20px',
-                            }}
-                        />
-                    </div>
-                ))}
-            </div>
+      <Typography.Paragraph style={{ fontSize: isLargeFont ? '1.2rem' : '1rem', display: 'flex', alignItems: 'center' }}>
+        <MailOutlined style={{ marginRight: 8 }} /> {emailText[language]}: <a href={`mailto:${email}`} style={{ marginLeft: 8 }}>{email}</a>
+      </Typography.Paragraph>
+      <Typography.Paragraph style={{ fontSize: isLargeFont ? '1.2rem' : '1rem', display: 'flex', alignItems: 'center' }}>
+        <FacebookFilled style={{ marginRight: 8 }} />
+        <a href={facebook} target="_blank" rel="noopener noreferrer">Facebook/Biosheng</a>
+      </Typography.Paragraph>
 
-            {/* Map Section */}
-            <div
-                style={{
-                    marginTop: '40px',
-                    backgroundColor: '#d9d9d9',
-                    height: '300px',
-                    borderRadius: '8px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
+      <Row gutter={[16, 24]} style={{ marginTop: 32 }}>
+        {stores.map(store => (
+          <Col key={store.id} xs={24} sm={12} md={8}>
+            <Card
+              hoverable
+              cover={<img src={store.image} alt={store.name} style={{ height: 200, objectFit: 'cover' }} />}
             >
-                <p style={{ color: '#555', fontSize: '1.5rem' }}>
-                    {isChinese ? '地图位置（未来加入）' : 'Map position (for future)'}
-                </p>
-            </div>
-        </div>
-    );
+              <Card.Meta
+                title={<Typography.Title level={5}>{store.name}</Typography.Title>}
+                description={
+                  <div>
+                    <p style={{ marginBottom: 4 }}>{store.address}</p>
+                    <p style={{ marginBottom: 0 }}>📞 {store.phone}</p>
+                  </div>
+                }
+              />
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </div>
+  );
 };
 
 export default Contact;
